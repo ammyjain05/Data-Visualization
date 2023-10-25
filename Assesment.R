@@ -17,7 +17,7 @@ dataset <- WDI(country="all",
          extra=TRUE,
          cache = wdi_cache)
 
-#----------------------------------chart 1 - World Map---------------------------------------------
+#----------------------------------fig 1 - World Map---------------------------------------------
 
 # create data for world coordinates using 
 # map_data() function
@@ -56,7 +56,7 @@ ggplot(filter(countryDataWDIMap, year=="2015", !is.na(EN.ATM.PM25.MC.M3)),
        caption="Data source: World Development Indicators (WDI)")
 
 
-#----------------------------------chart 2 - HEATMAP---------------------------------------------
+#----------------------------------fig 2 - HEATMAP---------------------------------------------
 
 #print length of each vector
 length(dataset$EG.USE.COMM.FO.ZS)
@@ -90,7 +90,7 @@ ggplot(y,aes(country,reorder(variable, value), fill = value)) + geom_tile()+
   
 
 
-#----------------------------------chart 3 - radar---------------------------------------------
+#----------------------------------fig 3 - radar---------------------------------------------
 
 
 install.packages("devtools")
@@ -136,7 +136,7 @@ xy %>% mutate_if(is.numeric, rescale) %>%
   )
 
 
-#----------------------------------chart 4 - Lollipop---------------------------------------------
+#----------------------------------fig 4 - Lollipop---------------------------------------------
 
 
 library(dplyr)
